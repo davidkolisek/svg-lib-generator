@@ -1,0 +1,22 @@
+@use '../2-abstracts' as *;
+
+table {
+    thead {
+        tr {
+            th {
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+            }
+        }
+    }
+    tfoot {
+        tr {
+            td {
+            }
+        }
+    }
+}

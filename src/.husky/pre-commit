@@ -1,0 +1,19 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Set working directory to the location of package.json
+# shellcheck disable=SC2164
+cd "$(dirname "$0")/.."
+
+# Check for debugger statements in the src folder
+if grep -rnE 'debugger' src; then
+  echo 'Found debugger statements. Please remove them before committing.'
+  exit 1
+fi
+
+# Run lint-staged
+npx lint-staged
+
+echo "Successfully formatted/checked & committed. GJ :)"
+
+exit 0

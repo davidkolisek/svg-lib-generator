@@ -1,0 +1,11 @@
+node_modules
+.nuxt
+.husky
+dist
+coverage
+.prettierignore
+.stylelintignore
+.eslintignore
+vitest.config.ts
+.output
+server

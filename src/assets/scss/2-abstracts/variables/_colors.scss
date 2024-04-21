@@ -1,0 +1,104 @@
+////////////////
+//BASIC COLOR PALLETE
+////////////////
+
+$c-yellow-50: var(--c-yellow-50);
+$c-yellow-100: var(--c-yellow-100);
+$c-yellow-200: var(--c-yellow-200);
+$c-yellow-300: var(--c-yellow-300);
+$c-yellow-400: var(--c-yellow-400);
+$c-yellow-500: var(--c-yellow-500);
+
+$c-cyan-dark-50: var(--c-cyan-dark-50);
+$c-cyan-dark-100: var(--c-cyan-dark-100);
+$c-cyan-dark-200: var(--c-cyan-dark-200);
+$c-cyan-dark-300: var(--c-cyan-dark-300);
+$c-cyan-dark-400: var(--c-cyan-dark-400);
+$c-cyan-dark-500: var(--c-cyan-dark-500);
+
+$c-green-50: var(--c-green-50);
+$c-green-100: var(--c-green-100);
+$c-green-200: var(--c-green-200);
+$c-green-300: var(--c-green-300);
+$c-green-400: var(--c-green-400);
+$c-green-500: var(--c-green-500);
+
+$c-red-50: var(--c-red-50);
+$c-red-100: var(--c-red-100);
+$c-red-200: var(--c-red-200);
+$c-red-300: var(--c-red-300);
+$c-red-400: var(--c-red-400);
+$c-red-500: var(--c-red-500);
+
+$c-blue-50: var(--c-blue-50);
+$c-blue-100: var(--c-blue-100);
+$c-blue-200: var(--c-blue-200);
+$c-blue-300: var(--c-blue-300);
+$c-blue-400: var(--c-blue-400);
+$c-blue-500: var(--c-blue-500);
+
+$c-blue-dark-50: var(--c-blue-50);
+$c-blue-dark-100: var(--c-blue-100);
+$c-blue-dark-200: var(--c-blue-200);
+$c-blue-dark-300: var(--c-blue-300);
+$c-blue-dark-400: var(--c-blue-400);
+$c-blue-dark-500: var(--c-blue-500);
+
+$c-purple-50: var(--c-purple--50);
+$c-purple-100: var(--c-purple--100);
+$c-purple-200: var(--c-purple--200);
+$c-purple-300: var(--c-purple--300);
+$c-purple-400: var(--c-purple--400);
+$c-purple-500: var(--c-purple--500);
+
+$c-gray-50: var(--c-gray-50);
+$c-gray-100: var(--c-gray-100);
+$c-gray-200: var(--c-gray-200);
+$c-gray-300: var(--c-gray-300);
+$c-gray-400: var(--c-gray-400);
+$c-gray-500: var(--c-gray-500);
+$c-gray-600: var(--c-gray-600);
+
+$c-black-50: var(--c-black-50);
+$c-black-100: var(--c-black-100);
+$c-black-200: var(--c-black-200);
+$c-black-300: var(--c-black-300);
+$c-black-400: var(--c-black-400);
+$c-black-500: var(--c-black-500);
+
+$c-orange-50: var(--c-orange-50);
+$c-orange-100: var(--c-orange-100);
+$c-orange-200: var(--c-orange-200);
+$c-orange-300: var(--c-orange-300);
+$c-orange-400: var(--c-orange-400);
+$c-orange-500: var(--c-orange-500);
+
+$c-white-500: var(--c-white-500);
+$c-white-400: var(--c-white-400);
+
+//font colors
+$fc-primary-1: var(--fc-primary-1);
+$fc-primary-2: var(--fc-primary-2);
+
+//gradient
+$c-purple-gradient-main: linear-gradient(
+    90deg,
+    rgba(60, 56, 240, 1) 0%,
+    rgba(155, 121, 252, 1) 100%
+);
+$c-purple-gradient-main-hover: linear-gradient(
+    90deg,
+    rgba(60, 56, 240, 1) 20%,
+    rgba(155, 121, 252, 1) 80%
+);
+$c-blue-gradient-main: linear-gradient(
+    90deg,
+    rgba(56, 210, 240, 1) 0%,
+    rgba(121, 133, 252, 1) 100%
+);
+$c-dark-gray-gradient-main: linear-gradient(310deg, #141727, #3a416f);
+$c-gray-gradient-main: linear-gradient(310deg, #627594, #a8b8d8);
+
+//
+
+$sidenav-bg: #f8f9fa;

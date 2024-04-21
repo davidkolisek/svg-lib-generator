@@ -1,0 +1,156 @@
+@use '../variables' as *;
+
+@mixin button-base {
+    transition: $trans-primary;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    font-family: $f-secondary;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: $br-semi-small;
+    letter-spacing: 0.01rem;
+    font-weight: 600;
+    &:hover,
+    &:active,
+    &:focus,
+    &:target {
+        transition: $trans-primary;
+        transform: translateY(-2px);
+    }
+}
+
+// Set button color
+@mixin button-color($color, $variant: null, $hoverColor: null) {
+    @if $variant == 'outlined' {
+        border: 1px solid $color;
+        background: transparent;
+        @if $hoverColor {
+            &:hover,
+            &:active,
+            &:focus,
+            &:target {
+                background: $hoverColor;
+                svg {
+                    path {
+                        fill: $hoverColor;
+                    }
+                }
+            }
+        }
+    }
+    @if $variant == 'contained' {
+        border: 1px solid $color;
+        background: $color;
+        @if $hoverColor {
+            &:hover,
+            &:active,
+            &:focus,
+            &:target {
+                background: $hoverColor;
+                border: 1px solid $hoverColor;
+            }
+        }
+    }
+    @if $variant == 'text' {
+        border: 1px solid transparent;
+        background: transparent;
+        @if $hoverColor {
+            &:hover,
+            &:active,
+            &:focus,
+            &:target {
+                color: $hoverColor;
+                svg {
+                    path {
+                        fill: $hoverColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Set button size
+@mixin button-size($sm: false, $md: false, $lg: false) {
+    position: relative;
+    @if $sm {
+        height: 40px;
+        line-height: 40px;
+        font-size: 0.9rem;
+        padding: 0 20px;
+        //pripravene BP
+        @media (max-width: $bp-desktop) {
+        }
+        @media (max-width: $bp-laptopxl) {
+        }
+        @media (max-width: $bp-laptop) {
+        }
+        @media (max-width: $bp-tablet) {
+        }
+        @media (max-width: $bp-mobile) {
+        }
+        @media (max-width: $bp-dinosaur) {
+        }
+    } @else if $md {
+        height: 50px;
+        line-height: 50px;
+        font-size: 1rem;
+        padding: 0 25px;
+        //pripravene BP
+        @media (max-width: $bp-desktop) {
+        }
+        @media (max-width: $bp-laptopxl) {
+        }
+        @media (max-width: $bp-laptop) {
+        }
+        @media (max-width: $bp-tablet) {
+        }
+        @media (max-width: $bp-mobile) {
+        }
+        @media (max-width: $bp-dinosaur) {
+        }
+    } @else if $lg {
+        height: 60px;
+        line-height: 60px;
+        font-size: 1.2rem;
+        padding: 0 30px;
+        //pripravene BP
+        @media (max-width: $bp-desktop) {
+        }
+        @media (max-width: $bp-laptopxl) {
+        }
+        @media (max-width: $bp-laptop) {
+        }
+        @media (max-width: $bp-tablet) {
+        }
+        @media (max-width: $bp-mobile) {
+        }
+        @media (max-width: $bp-dinosaur) {
+        }
+    } @else {
+        @error "A button size was not specified.";
+    }
+}
+// Set button icon
+@mixin button-icon($right: false, $left: false, $standalone: false, $icon-code) {
+    @if $right {
+        &:after {
+            content: '#{$icon-code}';
+        }
+    } @else if $left {
+        &:before {
+            content: '#{$icon-code}';
+        }
+    } @else if $standalone {
+        &:before {
+            content: '#{$icon-code}';
+        }
+    } @else {
+        @error "Button icon was not specified.";
+    }
+}

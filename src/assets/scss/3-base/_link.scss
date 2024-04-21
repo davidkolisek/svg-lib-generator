@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@use '../2-abstracts' as *;
+
+a {
+    &.btn.more-info {
+        /* editor */
+        font-size: 150%;
+        background-color: $c-yellow-300;
+        color: #fff;
+    }
+}

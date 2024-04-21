@@ -1,0 +1,9 @@
+@use '../2-abstracts' as *;
+
+::selection {
+    background: $c-purple-100;
+}
+
+::-moz-selection {
+    background: $c-purple-100;
+}
