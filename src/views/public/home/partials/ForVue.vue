@@ -1,39 +1,40 @@
 <template>
-    <div class="grid">
-        <div class="col-12">
-            <div class="intro">
-                <bm-container>
-                    <h1>Vue</h1>
-                    <Button label="Submit" @click="processUploadedSVGs" />
-                    <div v-if="generatedJavascript" class="generated-javascript">
-                        <h3>Generated JavaScript:</h3>
-                        <pre>{{ generatedJavascript }}</pre>
-                    </div>
-                    <div class="card">
-                        <FileUpload
-                            ref="fileUpload"
-                            name="demo[]"
-                            :multiple="true"
-                            accept="image/svg+xml"
-                            @select="onSelect"
-                        >
-                            <template #empty>
-                                <p>Drag and drop files here to upload.</p>
-                            </template>
-                        </FileUpload>
-                    </div>
-                </bm-container>
-                <div v-if="uploadedSVGContent.length > 0" class="uploaded-svg-content">
-                    <h3>Uploaded SVG Content:</h3>
-                    <ul>
-                        <li v-for="(content, index) in uploadedSVGContent" :key="index">
-                            {{ content }}
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="grid">
+    <div class="col-12">
+      <div class="intro">
+        <bm-container>
+          <h1>Vue js</h1>
+          <bm-icon icon="backward-solid" />
+
+          <div class="card">
+            <FileUpload
+                ref="fileUpload"
+                name="demo[]"
+                :multiple="true"
+                accept="image/svg+xml"
+                @select="onSelect"
+            >
+              <template #empty>
+                <p>Drag and drop files here to upload.</p>
+              </template>
+            </FileUpload>
+          </div>
+          <Button label="Generate JS!" @click="processUploadedSVGs" />
+
+          <div v-if="generatedJavascript" class="generated-javascript">
+            <h3>Generated JavaScript:</h3>
+            <!--            <pre>{{ generatedJavascript }}</pre>-->
+            <Textarea
+                v-model="generatedJavascript"
+                rows="30"
+                cols="30"
+                style="width: 100%"
+            />
+          </div>
+        </bm-container>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -41,13 +42,17 @@
     import FileUpload from 'primevue/fileupload'
     import Button from 'primevue/button'
     import BmContainer from '@/components/layout/Container.vue'
+    import Textarea from "primevue/textarea";
+    import BmIcon from "@/components/atoms/Icon.vue";
 
     export default {
         name: 'ForVue',
         components: {
             BmContainer,
             Button,
-            FileUpload
+          Textarea,
+            FileUpload,
+          BmIcon
         },
         setup() {
             const fileUploadRef = ref(null)
@@ -106,12 +111,7 @@
                 jsContent += `  };\n`
 
                 // Add your own JavaScript content here
-                jsContent += `
-  // Your own JavaScript content
-  function myFunction() {
-    console.log('Hello from myFunction!');
-  };
-  `
+                jsContent += ``
 
                 generatedJavascript.value = jsContent
             }
