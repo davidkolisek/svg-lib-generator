@@ -3,15 +3,34 @@
         <div class="col-12">
             <div class="intro">
                 <bm-container>
-                    <h1>Vanila js</h1>
+
+                  <ol>
+                    <li>
+                      <p>Upload multiple SVG icons</p>
+                    </li>
+                    <li>
+                      <p>In <strong>Settings</strong> choose your prefix for icons (f.e. "i")</p>
+                    </li>
+                    <li>
+                      <p>Click <strong>Generate JS!</strong></p>
+                    </li>
+                    <li>
+                      <p>Copy the generated JavaScript and use it in your project</p>
+                    </li>
+                  </ol>
+
                     <h3>Settings</h3>
                     <div>
+                      <div class="flex flex-column gap-2">
+                        <label for="username">Icon class prefix</label>
                         <InputText
                             type="text"
                             v-model="iconPrefix"
                             placeholder="Icon prefix (f.e.: slg)"
                         />
+                      </div>
                     </div>
+                  <br/>
                     <div class="card">
                         <FileUpload
                             ref="fileUpload"
@@ -25,11 +44,18 @@
                             </template>
                         </FileUpload>
                     </div>
-                    <Button label="Generate JS!" @click="processUploadedSVGs" />
+                  <br/>
+                    <Button label="Generate JS!" @click="processUploadedSVGs"  severity="info" size="large" />
 
                     <div v-if="generatedJavascript" class="generated-javascript">
                         <h3>Generated JavaScript:</h3>
-                        <!--            <pre>{{ generatedJavascript }}</pre>-->
+                      <p>Copy & paste in to your project</p>
+                      <h3>How to use it?</h3>
+                      <p>
+                        Let's say you have an SVG icon called "user", and in your settings, you have a prefix "i". That means you can use the icon like "i-user", for example, in an <strong>i</strong> tag. <br/>
+                        <br/> JavaScript will generate the SVG icon into your <strong>i</strong> tag based on the class name you put into your <strong>i</strong> tag.
+                      </p>
+                      <!--            <pre>{{ generatedJavascript }}</pre>-->
                         <Textarea
                             v-model="generatedJavascript"
                             rows="30"
