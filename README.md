@@ -1,3 +1,3 @@
-# svg-lig-gen
+# svg-lib-gen
 
 Simple tool to generate dynamic lib icons from svg files.
